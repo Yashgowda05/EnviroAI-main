@@ -1,0 +1,393 @@
+/* =========================================
+   ENVIROAI - ANIMATED 3D BACKGROUND
+========================================= */
+
+.enviro-3d-background {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      ellipse at 15% 20%,
+      rgba(0, 220, 150, 0.12),
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse at 85% 75%,
+      rgba(0, 140, 255, 0.13),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #071522 0%,
+      #0b1729 50%,
+      #06121e 100%
+    );
+
+  perspective: 1000px;
+  isolation: isolate;
+}
+
+/* 3D perspective grid */
+
+.enviro-grid {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  left: -50%;
+  top: 15%;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 255, 170, 0.09) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 255, 170, 0.09) 1px,
+      transparent 1px
+    );
+
+  background-size: 65px 65px;
+
+  transform: perspective(650px) rotateX(62deg);
+
+  transform-origin: center top;
+
+  animation: enviro-grid-move 18s linear infinite;
+
+  opacity: 0.45;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 20%,
+    black 70%,
+    transparent
+  );
+}
+
+/* Floating 3D spheres */
+
+.enviro-orb {
+  position: absolute;
+  border-radius: 50%;
+
+  transform-style: preserve-3d;
+
+  will-change: transform;
+}
+
+/* Green sphere */
+
+.orb-one {
+  width: 180px;
+  height: 180px;
+
+  top: 12%;
+  left: 8%;
+
+  background: radial-gradient(
+    circle at 30% 25%,
+    #a7ffd9 0%,
+    #16c784 18%,
+    #087f65 48%,
+    #062e39 78%,
+    #03121d 100%
+  );
+
+  box-shadow:
+    inset -15px -20px 35px rgba(0, 0, 0, 0.65),
+    inset 8px 8px 20px rgba(255, 255, 255, 0.18),
+    0 0 35px rgba(0, 255, 170, 0.12);
+
+  animation: enviro-float-one 10s ease-in-out infinite;
+}
+
+/* Blue sphere */
+
+.orb-two {
+  width: 130px;
+  height: 130px;
+
+  top: 58%;
+  right: 10%;
+
+  background: radial-gradient(
+    circle at 30% 25%,
+    #b2edff 0%,
+    #319cff 20%,
+    #1554a8 55%,
+    #07182f 100%
+  );
+
+  box-shadow:
+    inset -15px -18px 30px rgba(0, 0, 0, 0.65),
+    inset 6px 6px 15px rgba(255, 255, 255, 0.2),
+    0 0 35px rgba(0, 150, 255, 0.15);
+
+  animation: enviro-float-two 12s ease-in-out infinite;
+}
+
+/* Small green sphere */
+
+.orb-three {
+  width: 75px;
+  height: 75px;
+
+  top: 24%;
+  right: 24%;
+
+  background: radial-gradient(
+    circle at 30% 25%,
+    #d3ffe9,
+    #00c98b 25%,
+    #075e54 70%,
+    #031a25
+  );
+
+  box-shadow:
+    inset -10px -12px 20px rgba(0, 0, 0, 0.6),
+    0 0 25px rgba(0, 255, 160, 0.15);
+
+  animation: enviro-float-three 8s ease-in-out infinite;
+}
+
+/* Blue-green sphere */
+
+.orb-four {
+  width: 100px;
+  height: 100px;
+
+  bottom: 8%;
+  left: 24%;
+
+  background: radial-gradient(
+    circle at 30% 25%,
+    #d6ffff,
+    #22d3ee 22%,
+    #087b91 55%,
+    #041927 100%
+  );
+
+  box-shadow:
+    inset -12px -15px 24px rgba(0, 0, 0, 0.65),
+    0 0 30px rgba(34, 211, 238, 0.12);
+
+  animation: enviro-float-four 11s ease-in-out infinite;
+}
+
+/* Ambient lighting */
+
+.enviro-light {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+
+  border-radius: 50%;
+  filter: blur(100px);
+
+  opacity: 0.15;
+}
+
+.light-one {
+  top: 5%;
+  left: 35%;
+
+  background: #00ff9d;
+
+  animation: enviro-light-pulse 9s ease-in-out infinite;
+}
+
+.light-two {
+  right: 5%;
+  bottom: 5%;
+
+  background: #008cff;
+
+  animation: enviro-light-pulse 11s ease-in-out infinite reverse;
+}
+
+/* Small floating particles */
+
+.enviro-particle {
+  position: absolute;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #8fffe0;
+
+  box-shadow: 0 0 12px rgba(0, 255, 190, 0.8);
+
+  animation: enviro-particle-float 7s ease-in-out infinite;
+}
+
+.particle-one {
+  top: 25%;
+  left: 35%;
+}
+
+.particle-two {
+  top: 70%;
+  left: 15%;
+
+  animation-delay: -2s;
+}
+
+.particle-three {
+  top: 38%;
+  right: 15%;
+
+  animation-delay: -4s;
+}
+
+.particle-four {
+  bottom: 18%;
+  right: 35%;
+
+  animation-delay: -1s;
+}
+
+.particle-five {
+  top: 12%;
+  right: 45%;
+
+  animation-delay: -3s;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes enviro-float-one {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotateY(0deg);
+  }
+
+  50% {
+    transform: translate3d(20px, -30px, 40px) rotateY(25deg);
+  }
+}
+
+@keyframes enviro-float-two {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotateX(0deg);
+  }
+
+  50% {
+    transform: translate3d(-25px, 25px, 35px) rotateX(30deg);
+  }
+}
+
+@keyframes enviro-float-three {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(-15px, -22px, 25px) rotateY(35deg);
+  }
+}
+
+@keyframes enviro-float-four {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotateY(0deg);
+  }
+
+  50% {
+    transform: translate3d(22px, -18px, 30px) rotateY(-25deg);
+  }
+}
+
+@keyframes enviro-grid-move {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 130px;
+  }
+}
+
+@keyframes enviro-light-pulse {
+  0%,
+  100% {
+    opacity: 0.1;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 0.22;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes enviro-particle-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: translate3d(12px, -30px, 20px);
+    opacity: 1;
+  }
+}
+
+/* Accessibility: reduce motion when requested */
+
+@media (prefers-reduced-motion: reduce) {
+  .enviro-3d-background *,
+  .enviro-3d-background *::before,
+  .enviro-3d-background *::after {
+    animation: none !important;
+  }
+}
+
+/* Smaller spheres on mobile */
+
+@media (max-width: 768px) {
+  .orb-one {
+    width: 110px;
+    height: 110px;
+  }
+
+  .orb-two {
+    width: 85px;
+    height: 85px;
+  }
+
+  .orb-three {
+    width: 50px;
+    height: 50px;
+  }
+
+  .orb-four {
+    width: 65px;
+    height: 65px;
+  }
+
+  .enviro-light {
+    width: 220px;
+    height: 220px;
+
+    filter: blur(75px);
+  }
+
+  .enviro-grid {
+    background-size: 45px 45px;
+  }
+}

@@ -1,0 +1,146 @@
+.dashboard{
+
+    min-height:100vh;
+
+    background:#0F172A;
+
+    color:white;
+
+}
+
+.dashboard-navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 60px;
+
+    background:#111827;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.3);
+
+}
+
+.dashboard-navbar h2{
+
+    color:#10B981;
+
+}
+
+.logout-btn{
+
+    background:#EF4444;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 22px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+.logout-btn:hover{
+
+    transform:scale(1.05);
+
+}
+
+.dashboard-content{
+
+    text-align:center;
+
+    margin-top:80px;
+
+}
+
+.dashboard-content h1{
+
+    font-size:48px;
+
+    margin-bottom:20px;
+
+}
+
+.dashboard-content p{
+
+    color:#CBD5E1;
+
+    font-size:20px;
+
+}
+.dashboard-grid{
+    width:90%;
+    max-width:1200px;
+
+    margin:60px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+}
+
+.dashboard-card{
+
+    background:#1E293B;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    cursor:pointer;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+    font-size:45px;
+}
+
+.dashboard-card h3{
+
+    margin:20px 0 10px;
+
+    font-size:24px;
+}
+
+.dashboard-card p{
+
+    color:#CBD5E1;
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-10px);
+
+    background:#10B981;
+}
+
+.dashboard-card:hover p{
+
+    color:white;
+}
+.card-icon{
+    font-size:55px;
+    color:#10B981;
+    transition:.3s;
+}
+
+.dashboard-card:hover .card-icon{
+    color:white;
+    transform:scale(1.2) rotate(10deg);
+}

@@ -1,0 +1,81 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 22px 70px;
+
+  background: rgba(10, 15, 30, 0.18);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  z-index: 1000;
+
+  transition: all 0.4s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+}
+.logo-icon {
+  font-size: 2rem;
+  color: #10B981;
+  transition: transform 0.4s ease;
+}
+
+.logo:hover .logo-icon {
+  transform: rotate(20deg) scale(1.1);
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  position: relative;
+
+  color: white;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #10B981;
+}
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -8px;
+
+  width: 0;
+  height: 2px;
+
+  background: #10B981;
+
+  transition: 0.35s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}

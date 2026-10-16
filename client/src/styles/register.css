@@ -1,0 +1,130 @@
+.register-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0F172A, #1E293B);
+    padding: 20px;
+}
+
+.register-card {
+    width: 420px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.register-card h1 {
+    color: #10B981;
+    margin-bottom: 10px;
+}
+
+.register-card h2 {
+    margin-bottom: 30px;
+    color: white;
+}
+
+.register-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.register-card input {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.register-card form > button{
+    padding: 15px;
+    background: #10B981;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.register-card button:hover {
+    transform: scale(1.03);
+}
+
+.register-card p {
+    margin-top: 20px;
+    color: white;
+}
+
+.register-card p span {
+    color: #10B981;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.register-card p span:hover {
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Password Field */
+
+.password-field {
+    position: relative;
+    width: 100%;
+}
+
+.password-field input {
+    width: 100%;
+    padding-right: 45px;
+    box-sizing: border-box;
+}
+
+/* Eye Icon */
+
+.eye-icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    margin: 0;
+
+    color: #666;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.eye-icon:hover {
+    color: #10B981;
+}
+/* Hide Microsoft Edge's default password reveal icon */
+input::-ms-reveal,
+input::-ms-clear {
+    display: none;
+}
+
+/* Hide Edge/IE password reveal button */
+input[type="password"]::-webkit-credentials-auto-fill-button,
+input[type="password"]::-webkit-textfield-decoration-container {
+    display: none !important;
+}
